@@ -8,10 +8,7 @@ class AdminController
 
     public function __construct()
     {
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-            $this->repo = new AdminDAO();
-        }
+        $this->repo = new AdminDAO();
         if (!($_SESSION["is_admin"] ?? false)) {
             http_response_code(403);
             echo "Bạn không có quyền truy cập trang quản trị.";

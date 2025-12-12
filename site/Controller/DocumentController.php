@@ -27,10 +27,17 @@ class DocumentController
     }
 
     /* -------------------- DOCUMENT DETAIL -------------------- */
-    public function detail($id)
+    public function detail()
     {
         // debug: log router gọi hàm với id
-        error_log("DEBUG: DocumentController::detail called with id=" . var_export($id, true));
+        $id = $_GET['id'] ?? null;
+
+        if (!$id || !is_numeric($id)) {
+            http_response_code(400);
+            echo "Thiếu hoặc sai ID tài liệu.";
+            exit;
+        }
+
 
         // normalize id
         $id = (int) $id;

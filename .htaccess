@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Nếu không phải file hoặc thư mục thật thì rewrite
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Chuyển mọi request thành index.php?c=<tên đường dẫn>
+RewriteRule ^([^/]+)$ index.php?c=$1 [L,QSA]

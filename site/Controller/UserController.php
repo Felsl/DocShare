@@ -13,16 +13,11 @@ class UserController
 
         $this->userDAO = new UserDAO();
 
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
     }
 
     // Hiển thị form login
     public function login()
     {
-        if (session_status() === PHP_SESSION_NONE)
-            session_start();
 
         if ($_SERVER["REQUEST_METHOD"] === "GET") {
             $error = null;

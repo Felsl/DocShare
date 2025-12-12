@@ -1,6 +1,6 @@
 <?php require './layout/header.php'; ?>
 
-<link rel="stylesheet" href="/assets/css/home.css">
+<link rel="stylesheet" href="assets/css/home.css">
 
 <div class="home-hero">
     <div class="container hero-inner">
@@ -102,8 +102,6 @@
                 ?>
                 <div class="col-6 col-md-3">
                     <div class="card card-feature">
-                        <img src="<?= htmlspecialchars($thumbnail) ?>" class="card-img-top"
-                            alt="<?= htmlspecialchars($title) ?>">
                         <div class="card-body p-2">
                             <h6 class="mb-1"><?= htmlspecialchars($title) ?></h6>
                             <div class="small text-muted"><?= intval($downloads) ?> lượt tải</div>
