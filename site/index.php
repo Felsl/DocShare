@@ -2,7 +2,11 @@
 require "../config.php";
 require "../connectPDO.php";
 //model
-require "../bootstrap.php";
+$bootstrap = __DIR__ . '/../bootstrap.php';
+if (!file_exists($bootstrap)) {
+    die("Bootstrap file not found: $bootstrap");
+}
+require_once $bootstrap;
 // Dev: bật hiển thị lỗi tạm thời
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
