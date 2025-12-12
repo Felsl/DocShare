@@ -25,7 +25,7 @@ jobs:
           protocol: ftp
           port: 21
 
-          local-dir: '.'
+          local-dir: './'
           server-dir: '/htdocs/'
 
           dangerous-clean-slate: false
