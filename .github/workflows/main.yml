@@ -8,25 +8,24 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: Install lftp (optional: improves reliability)
+      - name: Install lftp
         run: sudo apt-get update && sudo apt-get install -y lftp
 
-      - name: Deploy via FTP (SamKirkland FTP-Deploy)
+      - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.3
         with:
-          server: ${{ secrets.INFINITYFREE_HOST }}        # e.g. ftp.epizy.com or ftpupload.net
-          username: ${{ secrets.INFINITYFREE_USERNAME }}  # set in repo Secrets
-          password: ${{ secrets.INFINITYFREE_PASSWORD }}  # set in repo Secrets
+          server: ${{ secrets.INFINITYFREE_HOST }}
+          username: ${{ secrets.INFINITYFREE_USERNAME }}
+          password: ${{ secrets.INFINITYFREE_PASSWORD }}
           protocol: ftp
           port: 21
 
-          local-dir: './Build/'          # thư mục build trên repo của bạn
-          server-dir: '/htdocs/'         # upload tới thư mục htdocs (InfinityFree web root)
+          local-dir: '.'
+          server-dir: '/htdocs/'
 
-          # Các tuỳ chọn an toàn / tinh chỉnh
           dangerous-clean-slate: false
-          git-ftp-args: '--parallel'     # tuỳ chọn cho lftp/parallel (nếu hỗ trợ)
