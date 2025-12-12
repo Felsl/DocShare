@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/Document.php";
+require_once __DIR__ . "/Document.Class.php";
 
 class DocumentDAO
 {

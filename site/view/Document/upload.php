@@ -1,4 +1,4 @@
-<?php require __DIR__ . '/../layout/header.php'; ?>
+<?php require './layout/header.php'; ?>
 
 <h1>Upload tài liệu</h1>
 
@@ -27,4 +27,4 @@
     <button class="btn btn-success">Upload</button>
 </form>
 
-<?php require __DIR__ . '/../layout/footer.php'; ?>
+<?php require './layout/footer.php'; ?>

@@ -1,6 +1,6 @@
 <?php
 // model/rating/RatingRepository.php
-require_once __DIR__ . '/Rating.php';
+require_once __DIR__ . '/Rating.Class.php';
 
 class RatingDAO
 {

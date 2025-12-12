@@ -1,6 +1,6 @@
 <?php
 // model/admin/AdminRepository.php
-require_once __DIR__ . '/Admin.php';
+require_once __DIR__ . '/Admin.Class.php';
 
 class AdminDAO
 {
@@ -56,6 +56,29 @@ class AdminDAO
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         return $row ? $this->mapRowToAdmin($row) : null;
     }
+    public function findByEmail(string $email): ?Admin
+    {
+        $sql = "SELECT * FROM admins WHERE email = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$email]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (!$row) {
+            return null;
+        }
+
+        // TẠO OBJECT ADMIN ĐÚNG THEO CONSTRUCTOR
+        return new Admin(
+            isset($row['id']) ? (int) $row['id'] : null,
+            $row['username'],
+            $row['password'],       // MD5 hash hoặc bcrypt tuỳ DB
+            $row['full_name'],
+            $row['email'] ?? null,
+            $row['phone'] ?? null,
+            $row['created_at'] ?? null
+        );
+    }
+
 
     /**
      * Tạo mới admin

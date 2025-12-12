@@ -1,6 +1,6 @@
 <?php
 // model/comment/CommentRepository.php
-require_once __DIR__ . '/Comment.php';
+require_once __DIR__ . '/Comment.Class.php';
 
 class CommentDAO
 {

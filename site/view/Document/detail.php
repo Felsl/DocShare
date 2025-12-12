@@ -1,10 +1,11 @@
-<?php require __DIR__ . '/../layout/header.php'; ?>
+<?php require './layout/header.php'; ?>
 
 <div class="row">
     <div class="col-md-8">
         <h2><?= htmlspecialchars($doc->getTitle()) ?></h2>
         <p class="text-muted">Danh mục: <?= htmlspecialchars($category->getName() ?? 'N/A') ?> • Người upload:
-            <?= htmlspecialchars($uploader->getName() ?? 'N/A') ?></p>
+            <?= htmlspecialchars($uploader->getName() ?? 'N/A') ?>
+        </p>
         <p><?= nl2br(htmlspecialchars($doc->getDescription())) ?></p>
 
         <div class="mb-3">
@@ -51,4 +52,4 @@
     </div>
 </div>
 
-<?php require __DIR__ . '/../layout/footer.php'; ?>
+<?php require './layout/footer.php'; ?>

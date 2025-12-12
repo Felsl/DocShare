@@ -1,6 +1,6 @@
 <?php
 // model/news/NewsRepository.php
-require_once __DIR__ . '/News.php';
+require_once __DIR__ . '/News.Class.php';
 
 class NewsDAO
 {

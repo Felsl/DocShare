@@ -1,6 +1,6 @@
 <?php
 // model/category/CategoryRepository.php
-require_once __DIR__ . '/Category.php';
+require_once __DIR__ . '/Category.Class.php';
 
 class CategoryDAO
 {

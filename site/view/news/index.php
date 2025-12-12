@@ -1,4 +1,4 @@
-<?php require __DIR__ . '/../layout/header.php'; ?>
+<?php require './layout/header.php'; ?>
 
 <h1>Thông báo</h1>
 <?php if (empty($news)): ?>
@@ -14,7 +14,7 @@
                 <?php endif; ?>
                 <div class="col">
                     <div class="card-body">
-                        <h5 class="card-title"><?= htmlspecialchars($n->getTitle()) ?>         <?php if ($n->getIsHot()): ?><span
+                        <h5 class="card-title"><?= htmlspecialchars($n->getTitle()) ?>         <?php if ($n->isHot()): ?><span
                                     class="badge bg-danger">Hot</span><?php endif; ?></h5>
                         <p class="card-text"><?= htmlspecialchars($n->getShortContent()) ?></p>
                         <a href="/index.php?controller=news&action=show&id=<?= $n->getId() ?>"
@@ -25,4 +25,4 @@
         </div>
     <?php endforeach; endif; ?>
 
-<?php require __DIR__ . '/../layout/footer.php'; ?>
+<?php require './layout/footer.php'; ?>

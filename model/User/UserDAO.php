@@ -3,7 +3,7 @@
 // Yêu cầu: trước khi tạo UserRepository, file tạo PDO phải chạy và gán $pdo (global).
 // Ví dụ bạn có file connectDB.php chứa đoạn PDO của bạn và include nó trước khi dùng repository.
 
-require_once __DIR__ . '/User.php'; // điều chỉnh đường dẫn nếu cần
+require_once __DIR__ . '/User.Class.php'; // điều chỉnh đường dẫn nếu cần
 
 class UserDAO
 {
@@ -12,6 +12,7 @@ class UserDAO
 
     public function __construct()
     {
+        error_log("PDO CHECK: " . print_r($GLOBALS['pdo'], true));
         // Dùng global $pdo (theo style project hiện tại)
         if (isset($GLOBALS['pdo']) && $GLOBALS['pdo'] instanceof PDO) {
             $this->pdo = $GLOBALS['pdo'];

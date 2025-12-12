@@ -34,16 +34,46 @@ class User
     }
 
     // Getters
-    public function getId(){ return $this->id; }
-    public function getEmail(){ return $this->email; }
-    public function getPasswordHash(){ return $this->passwordHash; }
-    public function getName(){ return $this->name; }
-    public function getAddress(){ return $this->address; }
-    public function getPhone(){ return $this->phone; }
-    public function getRole(){ return $this->role; }
-    public function getStatus(){ return $this->status; }
-    public function getCreatedAt(){ return $this->createdAt; }
+    public function getId()
+    {
+        return $this->id;
+    }
+    public function getEmail()
+    {
+        return $this->email;
+    }
+    public function getPasswordHash()
+    {
+        return $this->passwordHash;
+    }
+    public function getName()
+    {
+        return $this->name;
+    }
+    public function getAddress()
+    {
+        return $this->address;
+    }
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+    public function getRole()
+    {
+        return $this->role;
+    }
+    public function getStatus()
+    {
+        return $this->status;
+    }
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
 
     // Setters
-    public function setPasswordHash($hash){ $this->passwordHash = $hash; }
+    public function setPasswordHash($hash)
+    {
+        $this->passwordHash = $hash;
+    }
 }

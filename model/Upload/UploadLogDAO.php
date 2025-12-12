@@ -1,6 +1,6 @@
 <?php
 // model/uploads_log/UploadLogRepository.php
-require_once __DIR__ . '/UploadLog.php';
+require_once __DIR__ . '/UploadLog.Class.php';
 
 class UploadLogDAO
 {
