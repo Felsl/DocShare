@@ -1,4 +1,8 @@
 <?php
+require "../config.php";
+require "../connectDB.php";
+//model
+require "../bootstrap.php";
 // Dev: bật hiển thị lỗi tạm thời
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
