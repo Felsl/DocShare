@@ -13,8 +13,8 @@ if (session_status() === PHP_SESSION_NONE) {
 $baseDir = __DIR__;
 
 // include config / connect PDO bằng đường dẫn tuyệt đối
-$configFile = $baseDir . '/../config.php';
-$connectFile = $baseDir . '/../connectPDO.php';
+$configFile = $baseDir . '/../Config.php';
+$connectFile = $baseDir . '/../ConnectPDO.php';
 $requireFile = $baseDir . '/../require.php';
 
 if (!file_exists($configFile) || !file_exists($connectFile) || !file_exists($requireFile)) {
