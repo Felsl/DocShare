@@ -1,0 +1,32 @@
+name: Deploy to InfinityFree
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Install lftp (optional: improves reliability)
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Deploy via FTP (SamKirkland FTP-Deploy)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.3
+        with:
+          server: ${{ secrets.INFINITYFREE_HOST }}        # e.g. ftp.epizy.com or ftpupload.net
+          username: ${{ secrets.INFINITYFREE_USERNAME }}  # set in repo Secrets
+          password: ${{ secrets.INFINITYFREE_PASSWORD }}  # set in repo Secrets
+          protocol: ftp
+          port: 21
+
+          local-dir: './Build/'          # thư mục build trên repo của bạn
+          server-dir: '/htdocs/'         # upload tới thư mục htdocs (InfinityFree web root)
+
+          # Các tuỳ chọn an toàn / tinh chỉnh
+          dangerous-clean-slate: false
+          git-ftp-args: '--parallel'     # tuỳ chọn cho lftp/parallel (nếu hỗ trợ)
