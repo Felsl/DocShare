@@ -1,6 +1,6 @@
 <?php
 require "../config.php";
-require "../connectDB.php";
+require "../connectPDO.php";
 //model
 require "../bootstrap.php";
 // Dev: bật hiển thị lỗi tạm thời

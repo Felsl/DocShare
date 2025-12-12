@@ -4,11 +4,11 @@ require_once __DIR__ . "/../../model/news/NewsRepository.php";
 
 class NewsController
 {
-    protected NewsRepository $repo;
+    protected NewsDAO $repo;
 
     public function __construct()
     {
-        $this->repo = new NewsRepository();
+        $this->repo = new NewsDAO();
     }
 
     public function index()
