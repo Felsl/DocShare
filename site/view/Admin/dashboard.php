@@ -72,8 +72,8 @@
                     <td><?= $d->getCreatedAt() ?></td>
                     <td>
                         <a class="btn btn-success btn-sm"
-                            href="/index.php?c=document&a=approve&id=<?= $d->getId() ?>">Duyệt</a>
-                        <a class="btn btn-danger btn-sm" href="/index.php?c=document&a=reject&id=<?= $d->getId() ?>">Từ
+                            href="index.php?c=document&a=approve&id=<?= $d->getId() ?>">Duyệt</a>
+                        <a class="btn btn-danger btn-sm" href="index.php?c=document&a=reject&id=<?= $d->getId() ?>">Từ
                             chối</a>
                     </td>
                 </tr>

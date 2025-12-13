@@ -55,10 +55,8 @@
                                         <i class="bi bi-download"></i> <?= intval($item->downloads ?? 0) ?> lượt tải
                                     </div>
                                     <div>
-                                        <a href="<?= $base ?>/index.php?c=document&a=detail&id=<?= urlencode($item->getId()) ?>"
-                                            class="btn btn-sm btn-outline-gold">Xem</a>
-                                        <a href="<?= htmlspecialchars($item->file ?? '#') ?>"
-                                            class="btn btn-sm btn-gold ms-2" download>Tải</a>
+                                        <a href="index.php?c=document&a=detail&id=<?= urlencode($item->getId()) ?>"
+                                            class="btn btn-sm btn-gold ms-2">Xem</a>
                                     </div>
                                 </div>
 
