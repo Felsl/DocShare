@@ -18,7 +18,7 @@
                 <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
             <?php endif; ?>
 
-            <form method="post" action="../../index.php?c=user&a=register">
+            <form method="post" action="index.php?c=user&a=register">
                 <div class="mb-3">
                     <label>Họ và tên</label>
                     <input name="fullname" type="text" class="form-control" required placeholder="Nhập họ tên">

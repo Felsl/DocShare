@@ -59,7 +59,7 @@ class UserController
         if ($admin) {
 
             // ADMIN → md5
-            if (md5($password) !== $admin->getPassword()) {
+            if (!password_verify($password, $admin->getPassword())) {
                 $error = "Sai mật khẩu.";
                 require __DIR__ . "/../view/user/login.php";
                 return;

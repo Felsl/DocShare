@@ -186,17 +186,31 @@ class DocumentController
     }
 
     /* -------------------- ADMIN: APPROVE -------------------- */
-    public function approve($id)
+    public function approve()
     {
+        $id = $_GET['id'] ?? null;
+        if (!$id) {
+            echo "Thiếu ID";
+            return;
+        }
+
         $this->docDAO->approve((int) $id);
-        header("Location: index.php?controller=document&action=pending");
+        header("Location: index.php?c=admin&a=dashboard");
+        exit;
     }
 
     /* -------------------- ADMIN: REJECT -------------------- */
-    public function reject($id)
+    public function reject()
     {
+        $id = $_GET['id'] ?? null;
+        if (!$id) {
+            echo "Thiếu ID";
+            return;
+        }
+
         $this->docDAO->reject((int) $id);
-        header("Location: index.php?controller=document&action=pending");
+        header("Location: index.php?c=admin&a=dashboard");
+        exit;
     }
     private function docValue($doc, $prop, $default = '')
     {

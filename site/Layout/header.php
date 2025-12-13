@@ -1,7 +1,5 @@
 <?php
 // site/view/layout/header.php
-if (session_status() === PHP_SESSION_NONE)
-    session_start();
 
 // compute base path so links work both on local and when deployed to subfolder
 // e.g. if script is /DocShare/site/index.php -> $base = /DocShare/site
@@ -54,7 +52,7 @@ $base = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\');
                 </ul>
 
                 <ul class="navbar-nav">
-                    <?php if (isset($_SESSION['user_id'])): ?>
+                    <?php if (isset($_SESSION["user_id"]) || isset($_SESSION["admin_id"])): ?>
                         <li class="nav-item"><a class="nav-link" href="<?= $base ?>/profile.php">Xin chào,
                                 <?= htmlspecialchars($_SESSION['user_name'] ?? 'User') ?></a></li>
                         <li class="nav-item"><a class="nav-link" href="<?= $base ?>/index.php?c=user&a=logout">Đăng xuất</a>

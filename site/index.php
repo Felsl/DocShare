@@ -1,7 +1,5 @@
 <?php
 
-if (session_status() === PHP_SESSION_NONE)
-    session_start();
 
 require "../config.php";
 require "../connectPDO.php";
@@ -22,6 +20,7 @@ if (!file_exists($bootstrap)) {
     die("Bootstrap file not found: $bootstrap");
 }
 require_once $bootstrap;
+session_start();
 
 
 // ensure $c and $a are defined

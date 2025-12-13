@@ -18,7 +18,7 @@
                 <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
             <?php endif; ?>
 
-            <form method="post" action="../../index.php?c=user&a=login">
+            <form method="post" action="index.php?c=user&a=login">
                 <div class="mb-3">
                     <label>Email</label>
                     <input name="email" type="email" class="form-control" required placeholder="Nhập email">
