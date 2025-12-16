@@ -1,5 +1,5 @@
 RewriteEngine On
-
+AddDefaultCharset UTF-8
 # Không rewrite file & folder thật
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d

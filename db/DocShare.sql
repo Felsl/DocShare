@@ -1,6 +1,7 @@
 -- Database dump: document_share (designed from original bookstore sample)
 -- Charset: utf8mb4, Engine: InnoDB
-
+SET NAMES utf8mb4;
+SET CHARACTER SET utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
