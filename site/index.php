@@ -1,8 +1,7 @@
 <?php
 
-
-require "../config.php";
-require "../connectPDO.php";
+require "../Config.php";
+require "../ConnectPDO.php";
 //model
 $bootstrap = __DIR__ . '/../bootstrap.php';
 if (!file_exists($bootstrap)) {

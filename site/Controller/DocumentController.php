@@ -22,8 +22,27 @@ class DocumentController
     /* -------------------- HOME LIST -------------------- */
     public function index()
     {
-        $docs = $this->docDAO->listApproved();
-        require_once __DIR__ . '/../view/document/index.php';
+        if (isset($_GET['category_id'])) {
+            $catId = (int) $_GET['category_id'];
+
+            $categoryDAO = new CategoryDAO();
+            $category = $categoryDAO->find($catId);
+            if (!$category) {
+                die("Danh mục không tồn tại");
+            }
+
+            $documents = $this->docDAO->listByCategory($catId);
+        }
+        // SEARCH
+        elseif (isset($_GET['q']) && trim($_GET['q']) !== '') {
+            $documents = $this->docDAO->search(trim($_GET['q']));
+        }
+        // MẶC ĐỊNH
+        else {
+            $documents = $this->docDAO->listApproved();
+        }
+
+        require __DIR__ . "/../view/document/index.php";
     }
 
     /* -------------------- DOCUMENT DETAIL -------------------- */
@@ -154,7 +173,9 @@ class DocumentController
         $filename = "uploads/" . time() . "_" . basename($file["name"]);
         move_uploaded_file($file["tmp_name"], $filename);
 
-        $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $title)));
+        $baseSlug = strtolower(trim(preg_replace('/[^a-z0-9]+/i', '-', $title), '-'));
+$slug = $baseSlug . '-' . time();
+
 
         $doc = new Document(
             null,
@@ -174,7 +195,7 @@ class DocumentController
 
         $this->docDAO->create($doc);
 
-        header("Location: index.php?controller=document&action=index");
+        header("Location: index.php?c=document&a=index");
         exit;
     }
 
@@ -195,7 +216,8 @@ class DocumentController
         }
 
         $this->docDAO->approve((int) $id);
-        header("Location: index.php?c=admin&a=dashboard");
+        header("Location: ../site/index.php?c=admin&a=dashboard");
+
         exit;
     }
 
@@ -209,7 +231,8 @@ class DocumentController
         }
 
         $this->docDAO->reject((int) $id);
-        header("Location: index.php?c=admin&a=dashboard");
+        header("Location: ../site/index.php?c=admin&a=dashboard");
+
         exit;
     }
     private function docValue($doc, $prop, $default = '')
@@ -255,4 +278,18 @@ class DocumentController
 
         return $default;
     }
+
+    public function search()
+{
+    $keyword = trim($_GET['q'] ?? '');
+
+    if ($keyword === '') {
+        $documents = [];
+    } else {
+        $documents = $this->docDAO->search($keyword);
+    }
+
+    require __DIR__ . "/../view/document/index.php";
+}
+
 }

@@ -1,6 +1,6 @@
 <?php
 // controller/admin/AdminController.php
-require_once __DIR__ . '/../../model/admin/AdminDAO.php';
+require_once __DIR__ . '/../../model/Admin/AdminDAO.php';
 
 class AdminController
 {

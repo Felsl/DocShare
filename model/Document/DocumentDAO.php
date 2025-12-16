@@ -184,5 +184,20 @@ class DocumentDAO
     ");
         return $stmt->execute(['id' => $id]);
     }
+public function listByCategory(int $categoryId): array
+    {
+        $stmt = $this->pdo->prepare("
+        SELECT * FROM documents
+        WHERE category_id = :cid
+          AND status = 'approved'
+        ORDER BY created_at DESC
+    ");
+        $stmt->execute(['cid' => $categoryId]);
 
+        $docs = [];
+        foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $r) {
+            $docs[] = $this->map($r);
+        }
+        return $docs;
+    }
 }

@@ -1,59 +1,63 @@
 <?php
 // site/view/document/index.php
-// $docs: array of Document objects or stdClass
+// Biến bắt buộc từ controller:
+// - $documents : array<Document>
+// - (optional) $category : Category
+// - (optional) $_GET['q']
 
-require './layout/header.php'; ?>
+require './layout/header.php';
+?>
 
-<h3>Truyện/Tài liệu mới cập nhật</h3>
+<h3 class="mb-3">
+    <?php if (isset($category)): ?>
+        📂 Danh mục: <?= htmlspecialchars($category->getName()) ?>
+    <?php elseif (!empty($_GET['q'])): ?>
+        🔍 Kết quả tìm kiếm cho:
+        <span class="text-warning">“<?= htmlspecialchars($_GET['q']) ?>”</span>
+    <?php else: ?>
+        📚 Tài liệu mới cập nhật
+    <?php endif; ?>
+</h3>
 
-<?php if (empty($docs)): ?>
-    <p>Không có tài liệu nào.</p>
+<?php if (empty($documents)): ?>
+    <div class="alert alert-warning">
+        ❌ Không có tài liệu nào.
+    </div>
 <?php else: ?>
+
     <div class="row">
-        <?php foreach ($docs as $doc):
-            // Lấy tiêu đề an toàn (Document có thể có getter)
-            if (is_object($doc)) {
-                $title = method_exists($doc, 'getTitle') ? $doc->getTitle() :
-                    (property_exists($doc, 'title') ? $doc->title : 'Untitled');
-                $thumb = method_exists($doc, 'getThumbnail') ? $doc->getThumbnail() : ($doc->thumbnail ?? '/assets/img/placeholder.png');
-            } else {
-                $title = $doc['title'] ?? 'Untitled';
-                $thumb = $doc['thumbnail'] ?? '/assets/img/placeholder.png';
-            }
-            ?>
+        <?php foreach ($documents as $doc): ?>
             <?php
-            // Lấy dữ liệu từ object Document bằng getter hoặc fallback
-            $docId = method_exists($doc, 'getId') ? $doc->getId() : ($doc->id ?? '');
-            $title = method_exists($doc, 'getTitle') ? $doc->getTitle() : ($doc->title ?? 'Untitled');
-            $thumb = method_exists($doc, 'getThumbnail') ? $doc->getThumbnail() : ($doc->thumbnail ?? '/assets/img/placeholder.png');
-            $downloads = method_exists($doc, 'getDownloads') ? $doc->getDownloads() : ($doc->downloads ?? 0);
+            // Document object – dùng getter trực tiếp
+            $docId = $doc->getId();
+            $title = $doc->getTitle();
+            $downloads = $doc->getDownloads();
             ?>
 
-            <div class="col-md-6 doc-card">
-                <div class="card bg-dark text-light">
-                    <div class="row g-0">
+            <div class="col-md-6 doc-card mb-3">
+                <div class="card bg-dark text-light h-100">
+                    <div class="card-body">
 
+                        <h5 class="card-title">
+                            <?= htmlspecialchars($title) ?>
+                        </h5>
 
-                        <div class="col">
-                            <div class="card-body">
-                                <h5><?= htmlspecialchars($title) ?></h5>
+                        <a href="<?= $base ?>/index.php?c=document&a=detail&id=<?= urlencode($docId) ?>"
+                            class="btn btn-sm btn-outline-warning mt-2">
+                            Xem
+                        </a>
 
-                                <a href="<?= $base ?>/index.php?c=document&a=detail&id=<?= urlencode($docId) ?>"
-                                    class="btn btn-sm btn-outline-warning mt-2">
-                                    Xem
-                                </a>
-
-                                <div class="small text-muted mt-2">
-                                    <?= intval($downloads) ?> lượt tải
-                                </div>
-                            </div>
+                        <div class="small text-muted mt-2">
+                            <?= (int) $downloads ?> lượt tải
                         </div>
+
                     </div>
                 </div>
             </div>
 
         <?php endforeach; ?>
     </div>
+
 <?php endif; ?>
 
-<?php require './layout/footer.php' ?>
+<?php require './layout/footer.php'; ?>

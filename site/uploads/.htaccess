@@ -1,0 +1,13 @@
+Options -Indexes
+
+<IfModule mod_mime.c>
+  AddType application/pdf .pdf
+  AddType application/zip .zip
+  AddType application/x-rar-compressed .rar
+  AddType application/msword .doc
+  AddType application/vnd.openxmlformats-officedocument.wordprocessingml.document .docx
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set Content-Disposition "attachment"
+</IfModule>

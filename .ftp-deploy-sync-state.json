@@ -1,0 +1,411 @@
+{
+    "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
+    "version": "1.0.0",
+    "generatedTime": 1765601605362,
+    "data": [
+        {
+            "type": "file",
+            "name": ".htaccess",
+            "size": 268,
+            "hash": "f519e6400f16e028d9f056d2037a7fc0fd675fda1f793b3bf6726a048b7f5c10"
+        },
+        {
+            "type": "file",
+            "name": "Config.php",
+            "size": 530,
+            "hash": "1e64e6c5f4b74db9b8c167a24a1fbbe92797b36de13e946ec15c7e66b9dcf058"
+        },
+        {
+            "type": "file",
+            "name": "ConnectPDO.php",
+            "size": 416,
+            "hash": "ed3cb6b9f0325a3715ef6366868229146dbdaea97b9ce4c0fad1f4fa4972b24d"
+        },
+        {
+            "type": "file",
+            "name": "README.md",
+            "size": 0,
+            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "type": "file",
+            "name": "bootstrap.php",
+            "size": 353,
+            "hash": "1b1fb683dd14c976e4ff26b739d0eefdf4379815e3d5e2c13dd983cfd659f97d"
+        },
+        {
+            "type": "folder",
+            "name": "db"
+        },
+        {
+            "type": "file",
+            "name": "index.php",
+            "size": 48,
+            "hash": "7562524eb1d520991ffd1c3fe5ea52b5b3d29cc4ef3c62b36eb387bf2b1b0053"
+        },
+        {
+            "type": "folder",
+            "name": "model"
+        },
+        {
+            "type": "file",
+            "name": "package-lock.json",
+            "size": 1196,
+            "hash": "11cb617e23e6a3d5631ce80babfb2155763e179bb87edcb1f85d237338faebc7"
+        },
+        {
+            "type": "file",
+            "name": "package.json",
+            "size": 54,
+            "hash": "5ddac7341f6563c416f05b9d64a41d203940084e1bb1043d23b7b25f72b87245"
+        },
+        {
+            "type": "file",
+            "name": "require.php",
+            "size": 99,
+            "hash": "a6efaf9ec0c0d6c69dec9cff01667db0abdbe265fb42556a8c91f17c94371040"
+        },
+        {
+            "type": "folder",
+            "name": "site"
+        },
+        {
+            "type": "file",
+            "name": "db/DocShare.sql",
+            "size": 8154,
+            "hash": "77f1b1fcc9b3d1e6043a93cd2fc9c814557cdb3fa7e8c97d373e4531274a9c7c"
+        },
+        {
+            "type": "folder",
+            "name": "model/Admin"
+        },
+        {
+            "type": "folder",
+            "name": "model/Category"
+        },
+        {
+            "type": "folder",
+            "name": "model/Comment"
+        },
+        {
+            "type": "folder",
+            "name": "model/Document"
+        },
+        {
+            "type": "folder",
+            "name": "model/News"
+        },
+        {
+            "type": "folder",
+            "name": "model/Rating"
+        },
+        {
+            "type": "folder",
+            "name": "model/Upload"
+        },
+        {
+            "type": "folder",
+            "name": "model/User"
+        },
+        {
+            "type": "folder",
+            "name": "site/Controller"
+        },
+        {
+            "type": "folder",
+            "name": "site/Layout"
+        },
+        {
+            "type": "folder",
+            "name": "site/assets"
+        },
+        {
+            "type": "file",
+            "name": "site/index.php",
+            "size": 2765,
+            "hash": "1f79c75aeb65aa10fdf2988545cf426e8c3c9c5e18ebb266dbb12349c1e80ebf"
+        },
+        {
+            "type": "folder",
+            "name": "site/uploads"
+        },
+        {
+            "type": "folder",
+            "name": "site/view"
+        },
+        {
+            "type": "file",
+            "name": "model/Admin/Admin.Class.php",
+            "size": 2157,
+            "hash": "28863d008ac61d88c187bd4b6b0de511a394cc86f5e55117927d44bf3cc4879a"
+        },
+        {
+            "type": "file",
+            "name": "model/Admin/AdminDAO.php",
+            "size": 7741,
+            "hash": "29fca93a0e99bbe5dad99f41444a978b33852753ce2568a40f6acbdd1b2a0419"
+        },
+        {
+            "type": "file",
+            "name": "model/Category/Category.Class.php",
+            "size": 1255,
+            "hash": "0736ff4c163a9dbd9596749d4072cb87ddbfc899ad772e17d4d3814b1c769f17"
+        },
+        {
+            "type": "file",
+            "name": "model/Category/CategoryDAO.php",
+            "size": 2265,
+            "hash": "1afd59f6d0680f72ea71442a9709ddc4adaac6411cb49cc4e5cc5bf4410821f2"
+        },
+        {
+            "type": "file",
+            "name": "model/Comment/Comment.Class.php",
+            "size": 811,
+            "hash": "882a47de6a70691e6f35e5e36522ef1351aa4105004336a1fbe58000ee21993e"
+        },
+        {
+            "type": "file",
+            "name": "model/Comment/CommentDAO.php",
+            "size": 3562,
+            "hash": "91c44999bbf1779868a4f24fb10d69f51cbd9658c17cd197533c6526b0700ff8"
+        },
+        {
+            "type": "file",
+            "name": "model/Document/Document.Class.php",
+            "size": 3351,
+            "hash": "fe4f7a653248aaea161da2c3a47c5ca981dedc49f72480d11d452adc05752cf2"
+        },
+        {
+            "type": "file",
+            "name": "model/Document/DocumentDAO.php",
+            "size": 5650,
+            "hash": "dc52751d9e63a1723c1f268065eae90e87d117f7a17e11ad7067263bd4d7ed1e"
+        },
+        {
+            "type": "file",
+            "name": "model/News/News.Class.php",
+            "size": 1703,
+            "hash": "db936f815cc4a1ccba19f5c39f5199ebad26b6fc606138baab0ac48d1dceb0cf"
+        },
+        {
+            "type": "file",
+            "name": "model/News/NewsDAO.php",
+            "size": 3241,
+            "hash": "e65366bea64909ad020dc810e12c0701103e70de04fcf85fa85fd31f552acb0d"
+        },
+        {
+            "type": "file",
+            "name": "model/Rating/Rating.Class.php",
+            "size": 1279,
+            "hash": "bec5cc5c0e9674b11ba35f6cbd092f7e33456e114ea319f949bd0d8f190211a3"
+        },
+        {
+            "type": "file",
+            "name": "model/Rating/RatingDAO.php",
+            "size": 5616,
+            "hash": "77e7f0c9a32d95721a304db721307c73a50fa5d5783493d377f5ba0bc6a9d555"
+        },
+        {
+            "type": "file",
+            "name": "model/Upload/UploadLog.Class.php",
+            "size": 1507,
+            "hash": "a1d7b70cdd70cc9c786a644ef1c3dc84fb732e7bc629c8d0d0e2378fdcbadbdb"
+        },
+        {
+            "type": "file",
+            "name": "model/Upload/UploadLogDAO.php",
+            "size": 1455,
+            "hash": "3215aa3baf19fa43f453d8c7471439527551b848c810cc7e7e44f8974b7ce4b9"
+        },
+        {
+            "type": "file",
+            "name": "model/User/User.Class.php",
+            "size": 1637,
+            "hash": "523f6bfa39c4be5751bd81c5fcbfbd76770856535389da63b3a8a3454646f731"
+        },
+        {
+            "type": "file",
+            "name": "model/User/UserDAO.php",
+            "size": 6569,
+            "hash": "65c38663881b75700542e4ef99fab00097378d2789d7fe8ea51dd7f2539f7ecb"
+        },
+        {
+            "type": "file",
+            "name": "site/Controller/AdminController.php",
+            "size": 3667,
+            "hash": "1dbdde4c41860e6d62609391447cc20ac02f632b2503c2505cda88adc2090074"
+        },
+        {
+            "type": "file",
+            "name": "site/Controller/CategoryController.php",
+            "size": 1565,
+            "hash": "19f240eefd781653d719751303ead619184f2e94e605db63ff56bec59c7461ac"
+        },
+        {
+            "type": "file",
+            "name": "site/Controller/CommentController.php",
+            "size": 740,
+            "hash": "c4da5c08eb2192fd79798db0a87b6c7347f46536632592ee167c35900a1bf699"
+        },
+        {
+            "type": "file",
+            "name": "site/Controller/DocumentController.php",
+            "size": 7383,
+            "hash": "6e3df610dc166c95873a66935f6dde70ee38d9af4c516a4b51b3b0db8b2210be"
+        },
+        {
+            "type": "file",
+            "name": "site/Controller/HomeController.php",
+            "size": 7505,
+            "hash": "abb22d58845a75921ced169aa9c65645ddd13fd544851c025d2a635be7934d5b"
+        },
+        {
+            "type": "file",
+            "name": "site/Controller/NewsController.php",
+            "size": 919,
+            "hash": "b40a5411e343e3619db0e52848e8c7cfb14c26b565e212fc434c602ea0ddb1c3"
+        },
+        {
+            "type": "file",
+            "name": "site/Controller/RatingController.php",
+            "size": 5920,
+            "hash": "110bf40fdeb20e35fdef593ea447a4e523aba0ecedded5ce7b47267a86a7f5f4"
+        },
+        {
+            "type": "file",
+            "name": "site/Controller/UserController.php",
+            "size": 4146,
+            "hash": "0e462bd65eacdc5f16e36da10040156e76b287efc29c94fc5e38331c0574238b"
+        },
+        {
+            "type": "file",
+            "name": "site/Controller/_helpers.php",
+            "size": 368,
+            "hash": "55b80160be4b10f11a93ceea1f66548514122bde7954fb8638526a4fbf0b9e35"
+        },
+        {
+            "type": "file",
+            "name": "site/Layout/footer.php",
+            "size": 537,
+            "hash": "75b95f1228667f447cc28d76737a45a406b610a47c9d2c24d06621dd990a63cf"
+        },
+        {
+            "type": "file",
+            "name": "site/Layout/header.php",
+            "size": 3072,
+            "hash": "3a95d4b465eee6ce7e75d9e4300b3b533ecb66361b4f933dc61648a32c13dc6b"
+        },
+        {
+            "type": "folder",
+            "name": "site/assets/css"
+        },
+        {
+            "type": "file",
+            "name": "site/uploads/1765567857_TTSKNGT.docx",
+            "size": 18712,
+            "hash": "65114a587835f9cab989a662805631642782610f034679fef36d6c5dae2f2f80"
+        },
+        {
+            "type": "folder",
+            "name": "site/view/Admin"
+        },
+        {
+            "type": "folder",
+            "name": "site/view/Document"
+        },
+        {
+            "type": "folder",
+            "name": "site/view/category"
+        },
+        {
+            "type": "folder",
+            "name": "site/view/home"
+        },
+        {
+            "type": "folder",
+            "name": "site/view/news"
+        },
+        {
+            "type": "folder",
+            "name": "site/view/user"
+        },
+        {
+            "type": "file",
+            "name": "site/assets/css/bootstrap.min.css",
+            "size": 233,
+            "hash": "6f1c6efb50ecfeb41c9ac783a989c031c947aa54df6163a692073fe10e017d25"
+        },
+        {
+            "type": "file",
+            "name": "site/assets/css/home.css",
+            "size": 1335,
+            "hash": "84fbe41bcbbbc3816664a54efa5dcbf79e44b9335a1a1f9f06481ef8d7f77a0c"
+        },
+        {
+            "type": "file",
+            "name": "site/view/Admin/dashboard.php",
+            "size": 2552,
+            "hash": "5da03c076a39b1e931c8b0af76b803d0522c88f7c359753a74d9185abb6f0164"
+        },
+        {
+            "type": "file",
+            "name": "site/view/Admin/index.php",
+            "size": 783,
+            "hash": "854c345d4602327cd8dca3329020e7349dffc52786d7c7b27f0d79d72aeac75b"
+        },
+        {
+            "type": "file",
+            "name": "site/view/Admin/pending.php",
+            "size": 1343,
+            "hash": "d5c5f6bbc1f2060186785d50210fefd677c15cc92d2f09ff5a53cf7970ecfe50"
+        },
+        {
+            "type": "file",
+            "name": "site/view/Document/detail.php",
+            "size": 2392,
+            "hash": "b9a5c12ced34e2a4c2b2fc7bd449af840acb20e899f9b36520bc4d67e6cacad9"
+        },
+        {
+            "type": "file",
+            "name": "site/view/Document/index.php",
+            "size": 2450,
+            "hash": "1a90d4da584dafd313f02e44d4c4fa10fa6525c9e8ed16f8d37dcf825fbce351"
+        },
+        {
+            "type": "file",
+            "name": "site/view/Document/upload.php",
+            "size": 1154,
+            "hash": "8cb1c70af6f91e85981f336b096ac40a890345d62179caac0cbc5382591699a1"
+        },
+        {
+            "type": "file",
+            "name": "site/view/category/index.php",
+            "size": 713,
+            "hash": "5c51e9b7b4e15485225841b679b766a8d4393e30e7e2fd388d56016dbef783ad"
+        },
+        {
+            "type": "file",
+            "name": "site/view/home/index.php",
+            "size": 5527,
+            "hash": "037a6099ffba5236186b12b3531a33323a8ddac368f73bff4bc20a4a139e07ce"
+        },
+        {
+            "type": "file",
+            "name": "site/view/news/index.php",
+            "size": 1249,
+            "hash": "d75f4e9f0aa2b20034dae46a9bbd6f1a23dda92bde6a8be9cc4052a1d73014ce"
+        },
+        {
+            "type": "file",
+            "name": "site/view/user/login.php",
+            "size": 1470,
+            "hash": "12a7f1c1cefd98ee694f80988a6fde4aa18921d14ad4237726353eb912349fd9"
+        },
+        {
+            "type": "file",
+            "name": "site/view/user/register.php",
+            "size": 1938,
+            "hash": "7c7069b06db1ba9a2cf8c2c32642674c78d8dc7f844f9a0bcf8c9d06e96e1548"
+        }
+    ]
+}

@@ -1,7 +1,7 @@
 <?php
 // controller/comment/CommentController.php
 
-require_once __DIR__ . "/../../model/comment/CommentDAO.php";
+require_once __DIR__ . "/../../model/Comment/CommentDAO.php";
 
 class CommentController
 {
@@ -12,19 +12,31 @@ class CommentController
         $this->repo = new CommentDAO();
     }
 
-    public function store()
-    {
-        $c = new Comment(
-            null,
-            $_POST['document_id'],
-            $_SESSION['user_id'],
-            $_POST['content']
-        );
-
-        $this->repo->create($c);
-        header("Location: document.php?action=show&id=" . $_POST['document_id']);
+  public function store()
+{
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: index.php?c=user&a=login");
         exit;
     }
+
+    if (empty($_POST['content']) || empty($_POST['document_id'])) {
+        header("Location: index.php");
+        exit;
+    }
+
+    $c = new Comment(
+        null,
+        (int)$_POST['document_id'],
+        (int)$_SESSION['user_id'],
+        trim($_POST['content'])
+    );
+
+    $this->repo->create($c);
+
+    header("Location: index.php?c=document&a=detail&id=" . (int)$_POST['document_id']);
+    exit;
+}
+
 
     public function delete(int $id)
     {

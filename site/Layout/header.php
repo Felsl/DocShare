@@ -42,28 +42,67 @@ $base = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\');
             </button>
 
             <div class="collapse navbar-collapse" id="mainNav">
+
+                <!-- LEFT MENU -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="<?= $base ?>/index.php?c=document&a=index">Tài
-                            liệu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?= $base ?>/index.php?c=category&a=index">Danh
-                            mục</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?= $base ?>/index.php?c=news&a=index">Thông báo</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= $base ?>/index.php?c=document&a=index">Tài liệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= $base ?>/index.php?c=category&a=index">Danh mục</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= $base ?>/index.php?c=news&a=index">Thông báo</a>
                     </li>
                 </ul>
 
-                <ul class="navbar-nav">
+                <!-- 🔍 SEARCH FORM (NAVBAR) -->
+                <form class="d-flex me-3" method="get" action="<?= $base ?>/index.php">
+                    <input type="hidden" name="c" value="document">
+                    <input type="hidden" name="a" value="search">
+
+                    <input class="form-control form-control-sm me-2" type="search" name="q"
+                        placeholder="Tìm tài liệu..." value="<?= htmlspecialchars($_GET['q'] ?? '') ?>">
+
+                    <button class="btn btn-outline-light btn-sm" type="submit">
+                        🔍
+                    </button>
+                </form>
+
+                <!-- RIGHT MENU (AUTH) -->
+                <ul class="navbar-nav mb-2 mb-lg-0">
                     <?php if (isset($_SESSION["user_id"]) || isset($_SESSION["admin_id"])): ?>
-                        <li class="nav-item"><a class="nav-link" href="<?= $base ?>/profile.php">Xin chào,
-                                <?= htmlspecialchars($_SESSION['user_name'] ?? 'User') ?></a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?= $base ?>/index.php?c=user&a=logout">Đăng xuất</a>
+                        <li class="nav-item">
+                            <?php
+                            $userName = 'User';
+                            if (isset($_SESSION['user_id'])) {
+                                $userDAO = new UserDAO();
+                                $u = $userDAO->find((int) $_SESSION['user_id']);
+                                if ($u) {
+                                    $userName = $u->getName();
+                                }
+                            }
+                            ?>
+
+                            <span class="nav-link ">
+                                Xin chào, <?= htmlspecialchars($userName) ?>
+                            </span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= $base ?>/index.php?c=user&a=logout">
+                                Đăng xuất
+                            </a>
                         </li>
                     <?php else: ?>
-                        <li class="nav-item"><a class="nav-link" href="<?= $base ?>/index.php?c=user&a=login">Đăng
-                                nhập</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?= $base ?>/index.php?c=user&a=register">Đăng
-                                ký</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= $base ?>/index.php?c=user&a=login">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= $base ?>/index.php?c=user&a=register">Đăng ký</a>
+                        </li>
                     <?php endif; ?>
                 </ul>
+
             </div>
         </div>
     </nav>
