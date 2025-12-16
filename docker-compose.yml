@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: docshare_app
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_NAME: docshare
+      DB_USER: root
+      DB_PASS: root
+
+  db:
+    image: mysql:8.0
+    container_name: docshare_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: docshare
+      MYSQL_USER: docshare
+      MYSQL_PASSWORD: docshare
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db/DocShare.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  db_data:
