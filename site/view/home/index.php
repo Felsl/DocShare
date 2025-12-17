@@ -12,7 +12,7 @@ $isSearch = isset($_GET['q']) && trim($_GET['q']) !== '';
     <div class="home-hero">
         <div class="container hero-inner">
             <div class="hero-left">
-                <h1 class="hero-title">DocShare — Tài liệu học tập</h1>
+                <h1 class="hero-title">Lê Thành Đức thứ 4 ca 2</h1>
                 <p class="hero-sub">Chia sẻ tài liệu, học tập cùng cộng đồng. Tìm nhanh — Tải ngay — Chia sẻ kiến thức.</p>
                 <div class="hero-cta">
                     <a href="<?= $base ?>/index.php?c=document&a=upload" class="btn btn-gold">📤 Upload</a>
